@@ -7,7 +7,8 @@
             await CreateIndexDemo.RunAsync();
             await PopulateDataDemo.RunAsync();
             await QueryDataDemo.RunAsync();
-           // await AnalyzeTextDataDemo.RunAsync();
+            //await AnalyzeTextDataDemo.RunAsync();
+            //await FacetsDataDemo.RunAsync();
         }
     }
 }

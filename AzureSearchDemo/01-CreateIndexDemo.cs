@@ -10,7 +10,7 @@ public class CreateIndexDemo
         searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.ExternalId), SearchFieldDataType.String) { IsKey = true, IsHidden = false, IsFilterable = true }); // musí být string
         searchIndex.Fields.Add(new SearchField(nameof(ProductIndexData.Name), SearchFieldDataType.String) { IsHidden = true, AnalyzerName = "cs.lucene" });
         searchIndex.Fields.Add(new SearchField(nameof(ProductIndexData.Code), SearchFieldDataType.String) { IsHidden = false, AnalyzerName = "cs.lucene" });
-        searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.Tags), SearchFieldDataType.Collection(SearchFieldDataType.Int32)) { IsFilterable = true, IsHidden = true });
+        searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.Tags), SearchFieldDataType.Collection(SearchFieldDataType.Int32)) { IsFilterable = true, IsHidden = true, IsFacetable = true });
         searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.EnabledForWeb), SearchFieldDataType.Boolean) { IsHidden = true, IsFilterable = true });
         searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.RetailPriceIncludingVat), SearchFieldDataType.Double) { IsHidden = true, IsFilterable = true, IsSortable = true, IsFacetable = true });
         searchIndex.Fields.Add(new SimpleField(nameof(ProductIndexData.InStock), SearchFieldDataType.Boolean) { IsHidden = true, IsFilterable = true, IsSortable = true });

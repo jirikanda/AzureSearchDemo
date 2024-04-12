@@ -41,7 +41,7 @@ public class QueryDataDemo
             SearchMode = Azure.Search.Documents.Models.SearchMode.All,
             SearchFields = { nameof(ProductIndexData.Name) },
             Select = { nameof(ProductIndexData.Code) },
-            Filter = "EnabledForWeb"
+            Filter = "EnabledForWeb and InStock"
         };
         var searchResponse = await client.SearchAsync<ProductIndexData>(searchQuery, searchOptions, cancellationToken);
         var searchResults = searchResponse.Value.GetResults();
