@@ -25,11 +25,11 @@ public class QueryDataDemo
         //await RunAsync("jídelní stůl*");
 
         // 3
-        await RunAsync("jíde* stů*");
-        await RunAsync("jíde stů");
+        //await RunAsync("jíde* stů*");
+        //await RunAsync("jíde stů");
 
         // 4
-        await RunAsync("jedlá soda");
+        //await RunAsync("jedlá soda");
 
     }
 
