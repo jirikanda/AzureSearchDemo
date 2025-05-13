@@ -2,8 +2,8 @@
 
 public static class ClientProvider
 {
-    private static Uri s_searchEndpoint = new Uri("https://globalazuredemosearch.search.windows.net");
-    private static string s_manageAdminKey = "4zgWANJGIT7CdyRg2bU5qZwujMsPPsyRLnbwJ7WHNCAzSeAgzpTk";
+    private static Uri s_searchEndpoint = new Uri("https://techedazureaisearchdemo.search.windows.net");
+    private static string s_manageAdminKey = "N7OjnHnMJEodv5WVsp8OmT336JvXFH9ajNQ2mXSmjqAzSeAih8zi";
     //private static string s_manageQueryKey = "...";
 
     public static SearchClient GetSearchClient(string indexName)

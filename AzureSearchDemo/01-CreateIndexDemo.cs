@@ -29,15 +29,16 @@ public class CreateIndexDemo
         });
         #endregion
 
-        #region MyDemoAnalyzer2 (Lowercase, Ascifolding, AutronicEdgeNGramTokenFilter)
-        searchIndex.TokenFilters.Add(new EdgeNGramTokenFilter("AutronicEdgeNGramTokenFilter") { MinGram = 1, MaxGram = 300, Side = EdgeNGramTokenFilterSide.Front });
+        #region MyDemoAnalyzer2 (Lowercase, Ascifolding, MyDemoNGramTokenFilter)
+        searchIndex.TokenFilters.Add(new EdgeNGramTokenFilter("MyDemoNGramTokenFilter") { MinGram = 1, MaxGram = 300, Side = EdgeNGramTokenFilterSide.Front });
         searchIndex.Analyzers.Add(new CustomAnalyzer(name: "MyDemoAnalyzer2", tokenizerName: LexicalTokenizerName.Whitespace)
         {
             TokenFilters =
             {
                 TokenFilterName.Lowercase, // převedeme tokeny na malá písmena (potřebujeme zajistit, aby hledání STUL, stul, Stul, ... bylo rovnocenné)
 				TokenFilterName.AsciiFolding, // z tokenů odstraníme diakritiku (potřebujeme zajistit, aby hledání "židle" a "zidle" bylo rovnocenné)
-				new TokenFilterName("AutronicEdgeNGramTokenFilter") // z každého tokenu uděláme ngramy (židle -> z, zi, zid, zidl, zidle)
+				new TokenFilterName("MyDemoNGramTokenFilter"), // z každého tokenu uděláme ngramy (židle -> z, zi, zid, zidl, zidle)
+                TokenFilterName.Unique  // odstraníme duplicity
 			}
         });
         #endregion

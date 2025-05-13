@@ -7,33 +7,36 @@ public class QueryDataDemo
     public static async Task RunAsync(CancellationToken cancellationToken = default)
     {
         // 1
-        await RunAsync("jídelní");
-        await RunAsync("jídelní stůl");
-        await RunAsync("JÍDELNÍ STŮL"); // kapitálky
+        await QueryAsync("jídelní", cancellationToken);
+        await QueryAsync("jídelní stůl", cancellationToken);
+        await QueryAsync("JÍDELNÍ STŮL", cancellationToken); // kapitálky
 
-        await RunAsync("jidelni"); // bez diakritiky
+        await QueryAsync("jídelnímu stolu", cancellationToken); // další tvary
+        await QueryAsync("jídelních stolů", cancellationToken); // další tvary
+
+        await QueryAsync("jidelni", cancellationToken); // bez diakritiky
 
         // 2
-        //await RunAsync("jídelní s");
-        //await RunAsync("jídelní st");
-        //await RunAsync("jídelní stů");
-        //await RunAsync("jídelní stůl");
+        //await QueryAsync("s", cancellationToken);
+        //await QueryAsync("st", cancellationToken);
+        //await QueryAsync("stů", cancellationToken);
+        //await QueryAsync("stůl", cancellationToken);
 
-        //await RunAsync("jídelní s*");
-        //await RunAsync("jídelní st*");
-        //await RunAsync("jídelní stů*");
-        //await RunAsync("jídelní stůl*");
+        //await QueryAsync("s*", cancellationToken);
+        //await QueryAsync("st*", cancellationToken);
+        //await QueryAsync("stů*", cancellationToken);
+        //await QueryAsync("stůl*", cancellationToken);
 
         // 3
-        //await RunAsync("jíde* stů*");
-        //await RunAsync("jíde stů");
+        //await QueryAsync("jíde* stů*", cancellationToken);
+        //await QueryAsync("jíde stů", cancellationToken);
 
         // 4
-        //await RunAsync("jedlá soda");
+        //await QueryAsync("jedlá soda", cancellationToken);
 
     }
 
-    public static async Task RunAsync(string searchQuery, CancellationToken cancellationToken = default)
+    public static async Task QueryAsync(string searchQuery, CancellationToken cancellationToken = default)
     {
         SearchClient client = GetSearchClient("index01");
         var searchOptions = new SearchOptions

@@ -33,6 +33,6 @@ public class PopulateDataDemo
         SearchClient client = GetSearchClient("index01");
         await client.UploadDocumentsAsync(products, new IndexDocumentsOptions { ThrowOnAnyError = true }, cancellationToken);
 
-        await Task.Delay(1000); // chvilku počkáme na zaindexování dat
+        await Task.Delay(1000, cancellationToken); // chvilku počkáme na zaindexování dat
     }
 }
