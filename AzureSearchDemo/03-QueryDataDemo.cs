@@ -11,21 +11,21 @@ public class QueryDataDemo
         await QueryAsync("jídelní stůl", cancellationToken);
         await QueryAsync("JÍDELNÍ STŮL", cancellationToken); // kapitálky
 
-        await QueryAsync("jídelnímu stolu", cancellationToken); // další tvary
-        await QueryAsync("jídelních stolů", cancellationToken); // další tvary
-
-        await QueryAsync("jidelni", cancellationToken); // bez diakritiky
+        //await QueryAsync("jidelni", cancellationToken); // bez diakritiky
 
         // 2
-        //await QueryAsync("s", cancellationToken);
-        //await QueryAsync("st", cancellationToken);
-        //await QueryAsync("stů", cancellationToken);
-        //await QueryAsync("stůl", cancellationToken);
+        //await QueryAsync("jídelní s", cancellationToken);
+        //await QueryAsync("jídelní st", cancellationToken);
+        //await QueryAsync("jídelní stů", cancellationToken);
+        //await QueryAsync("jídelní stůl", cancellationToken);
 
-        //await QueryAsync("s*", cancellationToken);
-        //await QueryAsync("st*", cancellationToken);
-        //await QueryAsync("stů*", cancellationToken);
-        //await QueryAsync("stůl*", cancellationToken);
+        //await QueryAsync("jídelní s*", cancellationToken);
+        //await QueryAsync("jídelní st*", cancellationToken);
+        //await QueryAsync("jídelní stů*", cancellationToken);
+        //await QueryAsync("jídelní stůl*", cancellationToken);
+
+        //await QueryAsync("jídelnímu stolu", cancellationToken); // další tvary
+        //await QueryAsync("jídelních stolů", cancellationToken); // další tvary
 
         // 3
         //await QueryAsync("jíde* stů*", cancellationToken);
